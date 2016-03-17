@@ -1,0 +1,9 @@
+.page-header{
+    text-align: center;
+}
+.page-header button{
+    width: 300px;
+}
+.details{
+  color: red;
+}
