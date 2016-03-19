@@ -1,27 +1,26 @@
 //Logic for page actions here. 
 
-var controllers = angular.module('myBlogApp.controllers', []);
+var controllers = angular.module('myBlogApp');
 
-controllers.controller('allBlogsController', ['$scope','GetBlog', function($scope, GetBlog) {
+controllers.controller('GetBlog', ['$scope','$location','PostFactory', function($scope, $location, PostFactory) {
 $scope.getAllBlogs = function() {
-    GetBlog.query().$promise.then(function(data) {
+    PostFactory.query().$promise.then(function(data) {
         $scope.blogs = data;
     }, console.error);
 }
 $scope.getAllBlogs();
    
 }]);
-function loadTodos() {
-  $scope.items = todoFactory.query()  
-}
-controllers.controller('getNewBlogs', ['$scope', 'BlogEntry', function($scope, GetBlog) {
+
+controllers.controller('getNewBlog', ['$scope','$location','PostFactory',function($scope, $location, PostFactory) {
     $scope.newPost = function(){
-        var blogDetail = {
+        console.log('hello');
+        $scope.blogDetail = {
             title: $scope.title,
             author: $scope.author,
             content: $scope.content 
-        }
-        console.log(blogDetail)
-        GetBlog.save(blogDetail);
-    }
+        };
+        console.log($scope.blogDetail);
+        PostFactory.save($scope.blogDetail);
+    };
 }]);
