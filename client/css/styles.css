@@ -4,6 +4,17 @@
 .page-header button{
     width: 300px;
 }
-.details{
-  color: red;
+.blog{
+  color: blue;
 }
+/*.new{
+    text-align: center;
+    border: solid red;
+}
+.new form{
+    border: solid red;
+    text-align: center;
+    width: 35%;
+    margin: 0 32%;
+    
+}*/
